@@ -4,7 +4,7 @@ const tableData = [
     decade: "1890s",
     score: -1,
     analysis:
-      "Although he promoted a lot of economical and business growth, his methods of **vertical integration** was unorthodox and unethical.",
+      "Although he promoted a lot of economical and business growth, his methods of **vertical integration** were unorthodox and unethical.",
     thinkingSkill: "Continuity and Change Over Time",
   },
   {
