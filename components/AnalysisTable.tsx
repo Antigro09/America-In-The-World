@@ -51,10 +51,10 @@ const tableData = [
 
 function ScoreBadge({ score }: { score: number }) {
   const getColor = () => {
-    if (score >= 4) return { bg: "rgba(92,184,92,0.15)", text: "#5cb85c", border: "rgba(92,184,92,0.35)" };
-    if (score >= 2) return { bg: "rgba(200,169,110,0.15)", text: "#c8a96e", border: "rgba(200,169,110,0.35)" };
-    if (score >= 0) return { bg: "rgba(74,144,217,0.15)", text: "#4a90d9", border: "rgba(74,144,217,0.35)" };
-    return { bg: "rgba(224,85,85,0.15)", text: "#e05555", border: "rgba(224,85,85,0.35)" };
+    if (score >= 4) return { bg: "rgba(109,177,135,0.16)", text: "#6db187", border: "rgba(109,177,135,0.35)" };
+    if (score >= 2) return { bg: "rgba(211,178,119,0.18)", text: "#d3b277", border: "rgba(211,178,119,0.35)" };
+    if (score >= 0) return { bg: "rgba(126,162,205,0.16)", text: "#7ea2cd", border: "rgba(126,162,205,0.35)" };
+    return { bg: "rgba(217,107,107,0.16)", text: "#d96b6b", border: "rgba(217,107,107,0.35)" };
   };
 
   const { bg, text, border } = getColor();
@@ -87,33 +87,23 @@ export default function AnalysisTable() {
       id="analysis"
       className="py-24 px-6"
       style={{
-        background: "linear-gradient(180deg, #0c1220 0%, #0a0e1a 100%)",
+        background: "linear-gradient(180deg, #0f192c 0%, #0b1220 100%)",
       }}
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section header */}
         <div className="text-center mb-16">
-          <p
-            className="text-xs tracking-[0.4em] uppercase font-medium mb-3"
-            style={{ color: "#c8a96e" }}
-          >
+          <p className="section-kicker mb-3">
             Historical Analysis
           </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{
-              color: "#e8e8e8",
-              fontFamily: "Georgia, 'Times New Roman', serif",
-            }}
-          >
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4">
             Scores &amp; Analysis
           </h2>
           <p
             className="text-sm max-w-2xl mx-auto mt-4"
-            style={{ color: "rgba(232,232,232,0.5)" }}
+            style={{ color: "rgba(233,237,244,0.56)" }}
           >
             Each figure is scored on their contribution to American progress.{" "}
-            <span style={{ color: "#f0d080" }}>
+            <span style={{ color: "#d3b277" }}>
               Bold text reflects historical thinking skills.
             </span>
           </p>
@@ -121,18 +111,17 @@ export default function AnalysisTable() {
             className="w-24 h-0.5 mx-auto mt-6"
             style={{
               background:
-                "linear-gradient(90deg, transparent, #c8a96e, transparent)",
+                "linear-gradient(90deg, transparent, #d3b277, transparent)",
             }}
           />
         </div>
 
-        {/* Score legend */}
         <div className="flex flex-wrap gap-4 justify-center mb-10">
           {[
-            { range: "+4 to +5", label: "Highly Positive", color: "#5cb85c" },
-            { range: "+1 to +3", label: "Positive", color: "#c8a96e" },
-            { range: "0", label: "Neutral", color: "#4a90d9" },
-            { range: "-1 and below", label: "Negative Impact", color: "#e05555" },
+            { range: "+4 to +5", label: "Highly Positive", color: "#6db187" },
+            { range: "+1 to +3", label: "Positive", color: "#d3b277" },
+            { range: "0", label: "Neutral", color: "#7ea2cd" },
+            { range: "-1 and below", label: "Negative Impact", color: "#d96b6b" },
           ].map((item) => (
             <div
               key={item.range}
@@ -140,7 +129,7 @@ export default function AnalysisTable() {
               style={{
                 background: `${item.color}15`,
                 border: `1px solid ${item.color}33`,
-                color: "rgba(232,232,232,0.7)",
+                color: "rgba(233,237,244,0.75)",
               }}
             >
               <span
@@ -155,19 +144,17 @@ export default function AnalysisTable() {
           ))}
         </div>
 
-        {/* Table */}
         <div
-          className="rounded-2xl overflow-hidden border"
-          style={{ borderColor: "rgba(200,169,110,0.2)" }}
+          className="panel rounded-2xl overflow-hidden"
+          style={{ borderColor: "rgba(211,178,119,0.24)" }}
         >
-          {/* Desktop table */}
           <div className="hidden md:block overflow-x-auto">
             <table className="w-full">
               <thead>
                 <tr
                   style={{
-                    background: "rgba(200,169,110,0.1)",
-                    borderBottom: "1px solid rgba(200,169,110,0.25)",
+                    background: "rgba(211,178,119,0.1)",
+                    borderBottom: "1px solid rgba(211,178,119,0.25)",
                   }}
                 >
                   {[
@@ -180,7 +167,7 @@ export default function AnalysisTable() {
                     <th
                       key={col}
                       className="px-6 py-4 text-left text-xs font-bold tracking-widest uppercase"
-                      style={{ color: "#c8a96e" }}
+                      style={{ color: "#d3b277" }}
                     >
                       {col}
                     </th>
@@ -191,7 +178,7 @@ export default function AnalysisTable() {
                 {tableData.map((row, idx) => (
                   <tr
                     key={row.figure}
-                    className="transition-colors duration-200 hover:bg-white/5"
+                    className="transition-colors duration-200 hover:bg-white/4"
                     style={{
                       borderBottom:
                         idx < tableData.length - 1
@@ -199,14 +186,14 @@ export default function AnalysisTable() {
                           : "none",
                       background:
                         idx % 2 === 0
-                          ? "rgba(255,255,255,0.02)"
+                          ? "rgba(255,255,255,0.014)"
                           : "transparent",
                     }}
                   >
                     <td className="px-6 py-5">
                       <span
                         className="font-bold text-sm"
-                        style={{ color: "#e8e8e8" }}
+                        style={{ color: "#e9edf4" }}
                       >
                         {row.figure}
                       </span>
@@ -215,9 +202,9 @@ export default function AnalysisTable() {
                       <span
                         className="text-xs font-semibold tracking-wider px-3 py-1 rounded-full"
                         style={{
-                          background: "rgba(200,169,110,0.1)",
-                          color: "#c8a96e",
-                          border: "1px solid rgba(200,169,110,0.25)",
+                          background: "rgba(211,178,119,0.12)",
+                          color: "#d3b277",
+                          border: "1px solid rgba(211,178,119,0.26)",
                         }}
                       >
                         {row.decade}
@@ -229,14 +216,14 @@ export default function AnalysisTable() {
                     <td className="px-6 py-5">
                       <span
                         className="text-xs italic"
-                        style={{ color: "rgba(232,232,232,0.5)" }}
+                        style={{ color: "rgba(233,237,244,0.56)" }}
                       >
                         {row.thinkingSkill}
                       </span>
                     </td>
                     <td
                       className="px-6 py-5 text-sm leading-relaxed max-w-md"
-                      style={{ color: "rgba(232,232,232,0.8)" }}
+                      style={{ color: "rgba(233,237,244,0.84)" }}
                     >
                       {renderWithBold(row.analysis)}
                     </td>
@@ -246,7 +233,6 @@ export default function AnalysisTable() {
             </table>
           </div>
 
-          {/* Mobile cards */}
           <div className="md:hidden">
             {tableData.map((row, idx) => (
               <div
@@ -259,7 +245,7 @@ export default function AnalysisTable() {
                       : "none",
                   background:
                     idx % 2 === 0
-                      ? "rgba(255,255,255,0.02)"
+                      ? "rgba(255,255,255,0.014)"
                       : "transparent",
                 }}
               >
@@ -267,16 +253,16 @@ export default function AnalysisTable() {
                   <div>
                     <h3
                       className="font-bold text-base"
-                      style={{ color: "#e8e8e8" }}
+                      style={{ color: "#e9edf4" }}
                     >
                       {row.figure}
                     </h3>
                     <span
                       className="inline-block text-xs font-semibold tracking-wider px-3 py-0.5 rounded-full mt-1"
                       style={{
-                        background: "rgba(200,169,110,0.1)",
-                        color: "#c8a96e",
-                        border: "1px solid rgba(200,169,110,0.25)",
+                        background: "rgba(211,178,119,0.12)",
+                        color: "#d3b277",
+                        border: "1px solid rgba(211,178,119,0.26)",
                       }}
                     >
                       {row.decade}
@@ -286,13 +272,13 @@ export default function AnalysisTable() {
                 </div>
                 <p
                   className="text-xs italic mb-2"
-                  style={{ color: "rgba(232,232,232,0.45)" }}
+                  style={{ color: "rgba(233,237,244,0.5)" }}
                 >
                   {row.thinkingSkill}
                 </p>
                 <p
                   className="text-sm leading-relaxed"
-                  style={{ color: "rgba(232,232,232,0.75)" }}
+                  style={{ color: "rgba(233,237,244,0.8)" }}
                 >
                   {renderWithBold(row.analysis)}
                 </p>

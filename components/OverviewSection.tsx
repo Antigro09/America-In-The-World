@@ -3,36 +3,28 @@ export default function OverviewSection() {
     <section
       id="overview"
       className="py-24 px-6"
-      style={{ background: "linear-gradient(180deg, #0a0e1a 0%, #0c1220 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0b1220 0%, #0f192c 100%)" }}
     >
       <div className="max-w-5xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-16">
-          <p
-            className="text-xs tracking-[0.4em] uppercase font-medium mb-3"
-            style={{ color: "#c8a96e" }}
-          >
+        <div className="mb-16 text-left md:text-center">
+          <p className="section-kicker mb-3">
             Historical Context
           </p>
-          <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: "#e8e8e8", fontFamily: "Georgia, 'Times New Roman', serif" }}
-          >
+          <h2 className="text-4xl md:text-5xl font-semibold mb-4">
             1890–1945 Overview
           </h2>
           <div
             className="w-24 h-0.5 mx-auto mt-4"
-            style={{ background: "linear-gradient(90deg, transparent, #c8a96e, transparent)" }}
+            style={{ background: "linear-gradient(90deg, transparent, #d3b277, transparent)" }}
           />
         </div>
 
-        {/* Overview sentences */}
         <div className="space-y-6">
           {[
             {
               num: "01",
               decade: "1890s",
-              text: "In the 1890s, the United States emerged as an imperial power, annexing Hawaii and gaining territories after the Spanish-American War, while industrialists like Andrew Carnegie shaped a booming—yet unequal—economy through monopolistic practices.",
+              text: "In the 1890s, the United States emerged as an imperial power, annexing Hawaii and gaining territories after the Spanish-American War, while industrialists like Andrew Carnegie shaped a booming, yet unequal, economy through monopolistic practices.",
               color: "#B22234",
             },
             {
@@ -62,16 +54,15 @@ export default function OverviewSection() {
           ].map((item) => (
             <div
               key={item.num}
-              className="flex gap-6 p-6 rounded-xl border transition-all duration-300 hover:scale-[1.01]"
+              className="panel flex gap-6 p-6 rounded-xl transition-all duration-300"
               style={{
-                background: "rgba(255,255,255,0.03)",
-                borderColor: "rgba(255,255,255,0.08)",
+                borderColor: "rgba(233,237,244,0.12)",
               }}
             >
               <div className="flex-shrink-0">
                 <span
                   className="text-3xl font-bold opacity-30"
-                  style={{ color: item.color, fontFamily: "Georgia, serif" }}
+                  style={{ color: item.color }}
                 >
                   {item.num}
                 </span>
@@ -89,7 +80,7 @@ export default function OverviewSection() {
                 </span>
                 <p
                   className="text-base leading-relaxed"
-                  style={{ color: "rgba(232,232,232,0.85)" }}
+                  style={{ color: "rgba(233,237,244,0.84)" }}
                 >
                   {item.text}
                 </p>

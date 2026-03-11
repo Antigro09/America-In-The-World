@@ -1,56 +1,70 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0e1a;
-  --foreground: #e8e8e8;
+  --bg: #0b1220;
+  --bg-elevated: #121d31;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-border: rgba(220, 198, 150, 0.2);
+  --text: #e9edf4;
+  --text-muted: rgba(233, 237, 244, 0.66);
+  --accent: #d3b277;
+  --accent-soft: rgba(211, 178, 119, 0.18);
+  --danger: #d96b6b;
+  --success: #6db187;
+  --info: #7ea2cd;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  background: radial-gradient(circle at 15% 0%, #1a2b4a 0%, var(--bg) 45%, #060a13 100%);
+  color: var(--text);
+  font-family: var(--font-sans), "Segoe UI", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), Georgia, serif;
+  letter-spacing: 0.01em;
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+a {
+  color: inherit;
 }
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s ease-out forwards;
+.site-shell {
+  position: relative;
 }
 
-.shimmer-text {
-  background: linear-gradient(90deg, #c8a96e, #f0d080, #c8a96e, #e8b84b);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 3s linear infinite;
+.site-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.45) 0.65px, transparent 0.65px);
+  background-size: 3px 3px;
 }
 
-.stars-bg {
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
-    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.9) 0%, transparent 100%),
-    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.7) 0%, transparent 100%),
-    radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.8) 0%, transparent 100%),
-    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
-    radial-gradient(1px 1px at 85% 15%, rgba(255,255,255,0.6) 0%, transparent 100%);
+.panel {
+  border: 1px solid var(--surface-border);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.015) 100%);
+  backdrop-filter: blur(4px);
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.soft-text {
+  color: var(--text-muted);
 }

@@ -3,49 +3,33 @@ export default function Footer() {
     <footer
       className="py-14 px-6 text-center"
       style={{
-        background: "#070b15",
-        borderTop: "1px solid rgba(200,169,110,0.15)",
+        background: "#070d18",
+        borderTop: "1px solid rgba(211,178,119,0.2)",
       }}
     >
       <div className="max-w-4xl mx-auto">
-        {/* Eagle & stars */}
-        <div className="flex justify-center gap-3 mb-4">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} style={{ color: "#c8a96e", opacity: 0.5 }}>
-              ★
-            </span>
-          ))}
-          <span className="text-2xl">🦅</span>
-          {Array.from({ length: 3 }).map((_, i) => (
-            <span key={i} style={{ color: "#c8a96e", opacity: 0.5 }}>
-              ★
-            </span>
-          ))}
-        </div>
-
         <h3
-          className="text-xl font-bold mb-2"
-          style={{ color: "#c8a96e", fontFamily: "Georgia, serif" }}
+          className="text-2xl font-semibold mb-2"
+          style={{ color: "#d3b277" }}
         >
           America in the World
         </h3>
         <p
           className="text-sm mb-6"
-          style={{ color: "rgba(232,232,232,0.4)" }}
+          style={{ color: "rgba(233,237,244,0.5)" }}
         >
           Is the United States a better version of itself in 1945 than it was in 1898?
         </p>
 
-        {/* Authors */}
         <div className="flex gap-3 justify-center flex-wrap mb-8">
           {["Anthony", "Arnav", "Martin"].map((name) => (
             <span
               key={name}
               className="text-sm px-4 py-1.5 rounded-full"
               style={{
-                background: "rgba(200,169,110,0.08)",
-                border: "1px solid rgba(200,169,110,0.2)",
-                color: "rgba(200,169,110,0.8)",
+                background: "rgba(211,178,119,0.1)",
+                border: "1px solid rgba(211,178,119,0.24)",
+                color: "rgba(211,178,119,0.88)",
               }}
             >
               {name}
@@ -54,10 +38,10 @@ export default function Footer() {
         </div>
 
         <p
-          className="text-xs"
-          style={{ color: "rgba(232,232,232,0.25)" }}
+          className="text-xs tracking-[0.12em] uppercase"
+          style={{ color: "rgba(233,237,244,0.34)" }}
         >
-          AP United States History &bull; 1890–1945
+          AP United States History &bull; 1890-1945
         </p>
       </div>
     </footer>
