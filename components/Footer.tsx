@@ -18,7 +18,7 @@ export default function Footer() {
           className="text-sm mb-6"
           style={{ color: "rgba(233,237,244,0.5)" }}
         >
-          Is the United States a better version of itself in 1945 than it was in 1898?
+          Is the United States a better version of itself in 1945 than it was in 1890?
         </p>
 
         <div className="flex gap-3 justify-center flex-wrap mb-8">

@@ -14,7 +14,7 @@ export default function HeroSection() {
 
         <h1 className="text-5xl md:text-7xl font-semibold leading-[0.96] max-w-4xl">
           Is the United States a better version of itself by 1945 than it was in
-          1898?
+          1890?
         </h1>
 
         <div className="flex items-center gap-4 my-10 flex-wrap">
@@ -26,7 +26,7 @@ export default function HeroSection() {
             }}
           >
             <p className="text-3xl font-semibold" style={{ color: "#d96b6b" }}>
-              1898
+              1890
             </p>
             <p
               className="text-[0.68rem] tracking-[0.16em] uppercase mt-1"

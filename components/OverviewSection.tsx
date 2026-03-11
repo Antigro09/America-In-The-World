@@ -1,4 +1,12 @@
 export default function OverviewSection() {
+  const overviewParagraphs = [
+    "In 1890, due to the staggering, unequally distributed wealth the US held, many reforms were made to equalize the current system by employing socialist political ideals, striking for improved wages, and the use of unions to lobby for worker reforms.",
+    "In the 1900s, the US shifted to control Latin America as its own sphere of influence by ensuring the US dollar was the main currency in the western hemisphere, as well as funding insurgencies that allowed for the creation of the Panama Canal which ultimately made the US stronger in terms of trading ability.",
+    "In the 1910s, the US attempted to stay out of the brewing World War but ultimately joined, which strengthened the economy and allowed the roaring 20s in the 1920s to allow for massive economic prosperity for millions of Americans and allowed many to own household appliances and actually buy the millions of products being made.",
+    "This prosperity was short-lived, however, and in the 1930s the economy crashed which caused a large depression and made many people unemployed and broke; to counter this from happening again many economic reforms were made, which allowed citizens to have their life savings insured as well as an appropriate amount of government intervention which alleviated the effects of the depression.",
+    "In the early 1940s, the US faced the threat of war as the Japanese island-hopping campaign drew ever closer to the continental US, and Germany was conquering many countries in Europe, including former US allies, which put increased pressure on the US government to make the decision of whether or not to go to war in a conflict which would eventually result in the US becoming a world power after most European countries were weakened.",
+  ];
+
   return (
     <section
       id="overview"
@@ -11,8 +19,14 @@ export default function OverviewSection() {
             Historical Context
           </p>
           <h2 className="text-4xl md:text-5xl font-semibold mb-4">
-            1890–1945 Overview
+            1890 to 1945 Overview
           </h2>
+          <p
+            className="text-sm max-w-3xl mx-auto"
+            style={{ color: "rgba(233,237,244,0.68)" }}
+          >
+            Written information
+          </p>
           <div
             className="w-24 h-0.5 mx-auto mt-4"
             style={{ background: "linear-gradient(90deg, transparent, #d3b277, transparent)" }}
@@ -20,40 +34,9 @@ export default function OverviewSection() {
         </div>
 
         <div className="space-y-6">
-          {[
-            {
-              num: "01",
-              decade: "1890s",
-              text: "In the 1890s, the United States emerged as an imperial power, annexing Hawaii and gaining territories after the Spanish-American War, while industrialists like Andrew Carnegie shaped a booming, yet unequal, economy through monopolistic practices.",
-              color: "#B22234",
-            },
-            {
-              num: "02",
-              decade: "1900s–1910s",
-              text: "The Progressive Era brought reform movements that challenged corporate power, with presidents Theodore Roosevelt and William Howard Taft using federal authority to break up trusts, while activists like Jane Addams fought for social welfare and suffragists demanded political equality.",
-              color: "#c8a96e",
-            },
-            {
-              num: "03",
-              decade: "1910s–1920s",
-              text: "The United States reluctantly entered World War I in 1917, and afterward the Senate's rejection of the League of Nations reflected a nation torn between global engagement and isolationism, as the Roaring Twenties brought unprecedented prosperity alongside racial tension and social upheaval.",
-              color: "#4a90d9",
-            },
-            {
-              num: "04",
-              decade: "1920s–1930s",
-              text: "The Great Depression, worsened by President Hoover's reluctance to intervene, devastated millions of Americans and eroded faith in laissez-faire capitalism, setting the stage for Franklin Roosevelt's New Deal, which fundamentally transformed the relationship between the federal government and its citizens.",
-              color: "#5cb85c",
-            },
-            {
-              num: "05",
-              decade: "1940s",
-              text: "World War II forced the United States into a global leadership role, and despite moral failures such as Japanese American internment, the war's end in 1945 left America as the world's preeminent economic and military power—a nation that, while still imperfect, had grown stronger, more organized, and more committed to international responsibility than it had been in 1898.",
-              color: "#c8a96e",
-            },
-          ].map((item) => (
+          {overviewParagraphs.map((text, index) => (
             <div
-              key={item.num}
+              key={text}
               className="panel flex gap-6 p-6 rounded-xl transition-all duration-300"
               style={{
                 borderColor: "rgba(233,237,244,0.12)",
@@ -62,27 +45,17 @@ export default function OverviewSection() {
               <div className="flex-shrink-0">
                 <span
                   className="text-3xl font-bold opacity-30"
-                  style={{ color: item.color }}
+                  style={{ color: "#d3b277" }}
                 >
-                  {item.num}
+                  {`0${index + 1}`}
                 </span>
               </div>
               <div>
-                <span
-                  className="inline-block text-xs font-semibold tracking-widest uppercase px-3 py-1 rounded-full mb-3"
-                  style={{
-                    background: `${item.color}22`,
-                    color: item.color,
-                    border: `1px solid ${item.color}44`,
-                  }}
-                >
-                  {item.decade}
-                </span>
                 <p
                   className="text-base leading-relaxed"
                   style={{ color: "rgba(233,237,244,0.84)" }}
                 >
-                  {item.text}
+                  {text}
                 </p>
               </div>
             </div>

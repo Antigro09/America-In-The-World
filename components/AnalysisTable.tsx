@@ -2,50 +2,50 @@ const tableData = [
   {
     figure: "Andrew Carnegie",
     decade: "1890s",
-    score: -1,
+    score: -2,
     analysis:
-      "Although he promoted a lot of economical and business growth, his methods of **vertical integration** were unorthodox and unethical.",
-    thinkingSkill: "Continuity and Change Over Time",
+      "Andrew Carnegie is a wealthy industrialist who made his fortune in the steel industry through vertical expansion. Although he promoted a lot of economic and business growth, his methods of vertical integration were unorthodox and unethical. He believed that people should be allowed to make money anyway they are able to, and that the rich must support the local community through donations and charity. He believes that increased regulations have damped the growth in the American economic sector and were not necessary measures. The anti-union measures used by Andrew Carnegie directly caused the regulations in the 1910s and the New Deal. These regulations improved the quality of life for workers in America and strengthened the economy despite the effects of the Great Depression.",
+    thinkingSkill: "Causation",
   },
   {
     figure: "William Randolph Hearst",
-    decade: "1900s",
-    score: 4,
+    decade: "1900's",
+    score: -1,
     analysis:
-      "Hearst's use of **yellow journalism** to sensationalize the sinking of the USS Maine exemplifies how **media manipulation** can drive a nation to war, illustrating the dangerous intersection of press power and **imperial ambition** in the Spanish-American War.",
-    thinkingSkill: "Causation",
+      "William Randolph Hearst was a media tycoon in the 1900s who attempted to use his media companies to sway public opinion in favor of his preferences. He frequently used public opinion to serve his own interests, growing his media companies through the use of horizontal expansion. His views starkly contrasted those of Huey Long who believed that public interests should be used to benefit the general public rather than a person's own interests. Despite his effects on the American media sector, the American economy remained strong until the Great Depression in the 1930s.",
+    thinkingSkill: "Comparison",
   },
   {
     figure: "Jeannette Rankin",
     decade: "1910s",
-    score: 5,
+    score: 2,
     analysis:
-      "As the first woman elected to Congress, Jeannette Rankin's votes against U.S. entry into both World Wars reflect an unwavering commitment to **pacifism and democratic principle**, even at great personal political cost—a landmark in the **evolution of women's political agency**.",
-    thinkingSkill: "Argumentation",
+      "Jeannette Rankin was a politician, pacifist, and women's suffrage activist who advocated for equality and women's suffrage. She organized the woman's suffrage party in New York as well as supporting woman's suffrage in her home state of Montana. She coordinated grassroots organizations so that common women could join the movement. These movements and efforts were different from past efforts that just tried to mobilize national conventions that not every women could attend. Rankin's strategy allowed common women to participate in political movements which ultimately improved the lives of misrepresented women.",
+    thinkingSkill: "Any",
   },
   {
     figure: "W.E.B. Du Bois",
     decade: "1920s",
-    score: 1,
+    score: 2,
     analysis:
-      'Du Bois\'s concept of **"double consciousness"** and his co-founding of the NAACP represent a critical challenge to the **racial hierarchy** embedded in American society, though systemic racism limited the immediate impact of his intellectual and activist contributions.',
-    thinkingSkill: "Contextualization",
+      "W.E.B DuBois was an activist who called for civil rights for all Americans. His views helped uplift the African American community by founding the NAACP, and continued the long battle for equal civil rights. His efforts helped actively challenge the century-old institution of racism in the South by lobbying for better civil rights laws as well as empowering affluent African Americans to help the poorer African Americans. These efforts helped improve the lives of countless African Americans who didn't have a leader or organization to look up to and be supported by.",
+    thinkingSkill: "Continuity",
   },
   {
     figure: "Huey Long",
     decade: "1930s",
-    score: 3,
+    score: 4,
     analysis:
-      'He was a far-left Democrat who was a staunch opponent of Roosevelt\'s **New Deal**, arguing it did not go far enough. His **"Share Our Wealth"** program proposed radical redistribution, making him both a champion of the poor and a cautionary example of **populist demagoguery**.',
+      "He was a far left democrat who was a staunch opponent of Roosevelt's New Deal. He openly believed that the New Deal didn't do enough for Americans at the time, and believed that more should have been done. His view of the need for Government intervention in the economy differs most starkly from William Randolph Hearst's attempts to use Journalism to sway public interests in favor of his own interests rather than helping the general public. These views helped improve America by the end of 1945 by advocating for and supporting legislations that improved the quality of life and reduced corruption for all Americans.",
     thinkingSkill: "Comparison",
   },
   {
     figure: "Franklin Delano Roosevelt",
     decade: "1940s",
-    score: 4,
+    score: 5,
     analysis:
-      "Franklin Delano Roosevelt created the **New Deal**, a set of government programs to help alleviate the economy after the **Great Depression**. This shows a stark change from his predecessors who believed in **Laissez-Faire capitalism**, and that the economy would self-stabilize. He held out against entering **World War II** initially but only entered after interests of America were directly threatened.",
-    thinkingSkill: "Continuity and Change Over Time",
+      "Franklin Delano Roosevelt was the 32nd US president, and created the New Deal, a set of Government programs to help alleviate the economy after the Great Depression. His views were a stark change from his predecessors who believed in Laissez Faire capitalism, and that the economy would self stabilize. His actions such as increasing government spending ultimately strengthened the economy as well as improved the quality of life for many Americans as they had access to stable government jobs.",
+    thinkingSkill: "Change",
   },
 ];
 
@@ -69,16 +69,7 @@ function ScoreBadge({ score }: { score: number }) {
 }
 
 function renderWithBold(text: string) {
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? (
-      <strong key={i} className="font-bold" style={{ color: "#f0d080" }}>
-        {part}
-      </strong>
-    ) : (
-      part
-    )
-  );
+  return text;
 }
 
 export default function AnalysisTable() {
@@ -102,10 +93,7 @@ export default function AnalysisTable() {
             className="text-sm max-w-2xl mx-auto mt-4"
             style={{ color: "rgba(233,237,244,0.56)" }}
           >
-            Each figure is scored on their contribution to American progress.{" "}
-            <span style={{ color: "#d3b277" }}>
-              Bold text reflects historical thinking skills.
-            </span>
+            Written information and scoring for major historical figures from 1890 to 1945.
           </p>
           <div
             className="w-24 h-0.5 mx-auto mt-6"
