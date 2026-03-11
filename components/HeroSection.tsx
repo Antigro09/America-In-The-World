@@ -10,7 +10,7 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto pt-24 md:pt-28">
-        <p className="section-kicker mb-5">AP United States History • Unit Study</p>
+        <p className="section-kicker mb-5">AP United States History • Unit 7</p>
 
         <h1 className="text-5xl md:text-7xl font-semibold leading-[0.96] max-w-4xl">
           Is the United States a better version of itself by 1945 than it was in

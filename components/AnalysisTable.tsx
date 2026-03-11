@@ -4,7 +4,7 @@ const tableData = [
     decade: "1890s",
     score: -2,
     analysis:
-      "Andrew Carnegie is a wealthy industrialist who made his fortune in the steel industry through vertical expansion. Although he promoted a lot of economic and business growth, his methods of vertical integration were unorthodox and unethical. He believed that people should be allowed to make money anyway they are able to, and that the rich must support the local community through donations and charity. He believes that increased regulations have damped the growth in the American economic sector and were not necessary measures. The anti-union measures used by Andrew Carnegie directly caused the regulations in the 1910s and the New Deal. These regulations improved the quality of life for workers in America and strengthened the economy despite the effects of the Great Depression.",
+      "Andrew Carnegie is a wealthy industrialist who made his fortune in the steel industry through vertical expansion. Although he promoted a lot of economic and business growth, his methods of vertical integration were unorthodox and unethical. He believed that people should be allowed to make money anyway they are able to, and that the rich must support the local community through donations and charity. He believes that increased regulations have damped the growth in the American economic sector and were not necessary measures. The anti-union measures used by Andrew Carnegie directly **caused** the regulations in the 1910s and the New Deal. These regulations improved the quality of life for workers in America and strengthened the economy despite the effects of the Great Depression.",
     thinkingSkill: "Causation",
   },
   {
@@ -12,7 +12,7 @@ const tableData = [
     decade: "1900's",
     score: -1,
     analysis:
-      "William Randolph Hearst was a media tycoon in the 1900s who attempted to use his media companies to sway public opinion in favor of his preferences. He frequently used public opinion to serve his own interests, growing his media companies through the use of horizontal expansion. His views starkly contrasted those of Huey Long who believed that public interests should be used to benefit the general public rather than a person's own interests. Despite his effects on the American media sector, the American economy remained strong until the Great Depression in the 1930s.",
+      "William Randolph Hearst was a media tycoon in the 1900s who attempted to use his media companies to sway public opinion in favor of his preferences. He frequently used public opinion to serve his own interests, growing his media companies through the use of horizontal expansion. His views **starkly contrasted** those of Huey Long who believed that public interests should be used to benefit the general public rather than a person's own interests. Despite his effects on the American media sector, the American economy remained strong until the Great Depression in the 1930s.",
     thinkingSkill: "Comparison",
   },
   {
@@ -28,7 +28,7 @@ const tableData = [
     decade: "1920s",
     score: 2,
     analysis:
-      "W.E.B DuBois was an activist who called for civil rights for all Americans. His views helped uplift the African American community by founding the NAACP, and continued the long battle for equal civil rights. His efforts helped actively challenge the century-old institution of racism in the South by lobbying for better civil rights laws as well as empowering affluent African Americans to help the poorer African Americans. These efforts helped improve the lives of countless African Americans who didn't have a leader or organization to look up to and be supported by.",
+      "W.E.B DuBois was an activist who called for civil rights for all Americans. His views helped uplift the African American community by founding the NAACP, and **continued** the long battle for equal civil rights. His efforts helped actively challenge the century-old institution of racism in the South by lobbying for better civil rights laws as well as empowering affluent African Americans to help the poorer African Americans. These efforts helped improve the lives of countless African Americans who didn't have a leader or organization to look up to and be supported by.",
     thinkingSkill: "Continuity",
   },
   {
@@ -36,7 +36,7 @@ const tableData = [
     decade: "1930s",
     score: 4,
     analysis:
-      "He was a far left democrat who was a staunch opponent of Roosevelt's New Deal. He openly believed that the New Deal didn't do enough for Americans at the time, and believed that more should have been done. His view of the need for Government intervention in the economy differs most starkly from William Randolph Hearst's attempts to use Journalism to sway public interests in favor of his own interests rather than helping the general public. These views helped improve America by the end of 1945 by advocating for and supporting legislations that improved the quality of life and reduced corruption for all Americans.",
+      "He was a far left democrat who was a staunch opponent of Roosevelt's New Deal. He openly believed that the New Deal didn't do enough for Americans at the time, and believed that more should have been done. His view of the need for Government intervention in the economy **differs most starkly** from William Randolph Hearst's attempts to use Journalism to sway public interests in favor of his own interests rather than helping the general public. These views helped improve America by the end of 1945 by advocating for and supporting legislations that improved the quality of life and reduced corruption for all Americans.",
     thinkingSkill: "Comparison",
   },
   {
@@ -44,7 +44,7 @@ const tableData = [
     decade: "1940s",
     score: 5,
     analysis:
-      "Franklin Delano Roosevelt was the 32nd US president, and created the New Deal, a set of Government programs to help alleviate the economy after the Great Depression. His views were a stark change from his predecessors who believed in Laissez Faire capitalism, and that the economy would self stabilize. His actions such as increasing government spending ultimately strengthened the economy as well as improved the quality of life for many Americans as they had access to stable government jobs.",
+      "Franklin Delano Roosevelt was the 32nd US president, and created the New Deal, a set of Government programs to help alleviate the economy after the Great Depression. His views were a **stark change** from his predecessors who believed in Laissez Faire capitalism, and that the economy would self stabilize. His actions such as increasing government spending ultimately strengthened the economy as well as improved the quality of life for many Americans as they had access to stable government jobs.",
     thinkingSkill: "Change",
   },
 ];
@@ -69,7 +69,16 @@ function ScoreBadge({ score }: { score: number }) {
 }
 
 function renderWithBold(text: string) {
-  return text;
+  const parts = text.split(/\*\*(.*?)\*\*/g);
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="font-bold" style={{ color: "#f0d080" }}>
+        {part}
+      </strong>
+    ) : (
+      part
+    )
+  );
 }
 
 export default function AnalysisTable() {
@@ -95,6 +104,9 @@ export default function AnalysisTable() {
           >
             Written information and scoring for major historical figures from 1890 to 1945.
           </p>
+          <span style={{ color: "#d3b277" }}>
+              Bold text reflects historical thinking skills.
+            </span>
           <div
             className="w-24 h-0.5 mx-auto mt-6"
             style={{
